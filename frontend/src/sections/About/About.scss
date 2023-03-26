@@ -1,0 +1,20 @@
+.about__card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+
+    @media screen and (min-width: 2000px) {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  h4 {
+    text-align: center;
+  }
+}

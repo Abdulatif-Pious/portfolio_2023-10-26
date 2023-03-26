@@ -1,0 +1,143 @@
+.app__navbar {
+  padding: 1rem 2rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 2;
+
+  .app__navbar-logo {
+    width: 100px;
+    height: 30px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      cursor: pointer
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 150px;
+      height: 50px;
+    }
+  }
+
+  .app__navbar-links {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .app__navbar-link  {
+      
+      &:hover {
+        div {
+          opacity: 1
+        }
+      }
+
+      div {
+        margin: 0 1rem;
+        width: 5px;
+        height: 5px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3 ease-in-out;
+      }
+    
+      a {
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 0.75rem;
+        color: var(--gray-color);
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        
+        &:hover {
+          color: var(--secondary-color)
+        }
+
+
+        @media screen and (min-width: 2000px) {
+          font-size: 2rem;
+        } 
+      }
+    }
+
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  .app__navbar-menu {
+    display: flex;
+
+    .app_navbar-menu-icon {
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+      cursor: pointer;
+
+      svg {
+        color: white;
+        font-size: 18px;
+      }
+    }
+
+    .app__navbar-menu-item {
+      position: fixed;
+      padding: 1rem 2rem;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 80%;
+      min-height: 100%;
+      background-image: url('../../assets/bgWhite.png');
+      background-color: white;
+      background-size: cover;
+      background-position: center;
+      z-index: 5;
+      box-shadow: 0 0 25px rgba(0,0,0, 0.25);
+
+      .app__navbar-menu-item-icon {
+        color: var(--secondary-color);
+        display: flex;
+        justify-content: flex-end;
+      
+        svg {
+          cursor: pointer;
+          font-size: 18px;
+        }
+      }
+
+      ul {
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          display: inline-block;
+          margin: 1rem 0;
+          color: var(--gray-color);
+          text-transform: uppercase;
+
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 990px) {
+      display: none;;
+    }
+  }
+}
