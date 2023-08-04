@@ -9,7 +9,10 @@
     flex-direction: column;
   }
 
+
   .skill__container {
+    flex-basis: 50%;
+    flex-wrap: wrap;
     flex: 1;
     display: flex;
     gap: 2rem;
@@ -42,6 +45,9 @@
   }
 
   .exp__container {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
     flex: 1;
     .exp__item {
       display: flex;

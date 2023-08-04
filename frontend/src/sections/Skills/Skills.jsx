@@ -42,19 +42,24 @@ const Skills = () => {
           ))}
         </div>
         <div className='exp__container'>
-          {experiences.map((experience, i) => (
-            <div key={`${experience}-${i}`} className='exp__item' >
-              <h3 className='bold__text'>
-                {experience?.year}
-              </h3>
-                {experience?.works?.map((item, i) => (
-                  <div key={`${item}-${i}`}>
-                    <h4 className='bold__text'>{item?.name}</h4>
-                    <p className='p__text'>{item?.company}</p>
-                  </div>
-                ))}
-            </div>
-          ))}
+          {experiences.length > 0 ? (
+            experiences.map((experience, i) => (
+              <div key={`${experience}-${i}`} className='exp__item' >
+                <h3 className='bold__text'>
+                  {experience?.year}
+                </h3>
+                  {experience?.works?.map((item, i) => (
+                    <div key={`${item}-${i}`}>
+                      <h4 className='bold__text'>{item?.name}</h4>
+                      <p className='p__text'>{item?.company}</p>
+                    </div>
+                  ))}
+              </div>
+            ))
+          ) : (
+            <p>Unfortunately, I have not any experience. But I can gain  great experience by hiring me.</p>
+          )}
+        
         </div>
       </div>
     </div>

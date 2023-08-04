@@ -26,41 +26,45 @@ const Testimonial = () => {
 
   return (
     <div className='app__section'>
-      {testimonials?.length && (
-        <div className='testimonial__card'>
-          <img 
-            src={urlFor(testimonials[activeIndex]?.imgUrl)}
-            alt={testimonials[activeIndex]?.name}
-          />
-          <div className='testimonial__card-content'>
-            <p className='bold__text'>{testimonials[activeIndex]?.feedback}</p>
-            
-            <div>
-              <p className='bold__text'>{testimonials[activeIndex]?.name}</p>
-              <p className='p__text'>{testimonials[activeIndex]?.company}</p>
+      {testimonials?.length ? (
+        <>
+          <div className='testimonial__card'>
+            <img 
+              src={urlFor(testimonials[activeIndex]?.imgUrl)}
+              alt={testimonials[activeIndex]?.name}
+            />
+            <div className='testimonial__card-content'>
+              <p className='bold__text'>{testimonials[activeIndex]?.feedback}</p>
+              
+              <div>
+                <p className='bold__text'>{testimonials[activeIndex]?.name}</p>
+                <p className='p__text'>{testimonials[activeIndex]?.company}</p>
+              </div>
             </div>
           </div>
-        </div>
-      )}
 
-      <div className='slide__container'>
-        <motion.div 
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.8 }}
-          className='slide__button app__flex-center'
-          onClick={() => setActiveIndex(activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1)}
-        >
-          <FaChevronLeft />
-        </motion.div>
-        <motion.div 
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.8 }}
-          className='slide__button app__flex-center'
-          onClick={() => setActiveIndex(activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1)}
-        >
-          <FaChevronRight />
-        </motion.div>
-      </div>
+        <div className='slide__container'>
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
+            className='slide__button app__flex-center'
+            onClick={() => setActiveIndex(activeIndex === 0 ? testimonials.length - 1 : activeIndex - 1)}
+          >
+            <FaChevronLeft />
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
+            className='slide__button app__flex-center'
+            onClick={() => setActiveIndex(activeIndex === testimonials.length - 1 ? 0 : activeIndex + 1)}
+          >
+            <FaChevronRight />
+          </motion.div>
+        </div>
+      </>
+    ) : (
+      <p> As I have not worked with any client yet, I don't have any testimonial so far. However, If you hire me, you'll give me one by your experience. Let's work with me and give me a testimonial. </p>
+    )}
 
       <div className='brand__container'>
         {brands?.map((brand, i) => (

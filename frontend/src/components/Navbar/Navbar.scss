@@ -33,7 +33,7 @@
     justify-content: center;
 
     .app__navbar-link  {
-      
+      text-align: center;
       &:hover {
         div {
           opacity: 1
@@ -41,7 +41,7 @@
       }
 
       div {
-        margin: 0 1rem;
+        margin: 0 3rem;
         width: 5px;
         height: 5px;
         background-color: var(--secondary-color);

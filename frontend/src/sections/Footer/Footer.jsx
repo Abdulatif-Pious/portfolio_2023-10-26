@@ -27,7 +27,18 @@ const Footer = () => {
     email: form.email,
     message: form.message
   }
+
+  const handleDisabled = () => {
+    const { name, email, message } = form
+    if (!name || !email || !message) {
+      return true;
+    }  else {
+      return false;
+    }
+  }
+
   const handleSubmit = () => {
+
     setIsloading(true);
 
     client
@@ -52,8 +63,8 @@ const Footer = () => {
             src={images.email}
             alt='email_img'
           />
-          <a href='mailto:info@Abdulatif.com' className='p__text'>
-            info@Abdulatif.com
+          <a href='mailto:abdulatif1215@gmail.com' className='p__text'>
+            abdulatif1215@gmail.com
           </a>
         </div>
         <div className='contact__card-item'>
@@ -80,7 +91,7 @@ const Footer = () => {
                 value={form.name}
                 onChange={handleChange}
                 className='p__text'
-                required
+                required={true}
               />
             </div>
             <div>
@@ -91,7 +102,7 @@ const Footer = () => {
                 value={form.email}
                 onChange={handleChange}
                 className='p__text'
-                required
+                required={true}
               />
             </div>
             <div>
@@ -103,18 +114,22 @@ const Footer = () => {
                 placeholder='message...'
                 onChange={handleChange}
                 className='p__text'
-                required
+                required={true}
               />
             </div>
             <div className="app__flex-center">
-              <motion.button 
-                type='submit'
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.8 }}
-                onClick={handleSubmit}
-              >
-                {isLoading ? 'Sending...' : 'Send message'}
-              </motion.button>
+            <motion.button
+              type="submit"
+              whileHover={{ scale: handleDisabled() ? 1 : 1.1 }} 
+              whileTap={{ scale: handleDisabled() ? 1 : 0.8 }} 
+              disabled={handleDisabled()} 
+              onClick={handleSubmit}
+              style={{
+                cursor: handleDisabled() && "not-allowed",
+              }}
+            >
+              {isLoading ? "Sending..." : "Send message"}
+            </motion.button>
             </div>
         </div>
       )}
