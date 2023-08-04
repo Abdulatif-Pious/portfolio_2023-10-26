@@ -63,7 +63,11 @@ const Testimonial = () => {
         </div>
       </>
     ) : (
-      <p> As I have not worked with any client yet, I don't have any testimonial so far. However, If you hire me, you'll give me one by your experience. Let's work with me and give me a testimonial. </p>
+      <p className='p__text'> 
+        As I have not worked with any client yet, I don't have any testimonial so far. 
+        However, If you hire me, you'll give me one by your experience. Let's work with me and give me 
+        a testimonial. 
+      </p>
     )}
 
       <div className='brand__container'>

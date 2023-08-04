@@ -57,7 +57,9 @@ const Skills = () => {
               </div>
             ))
           ) : (
-            <p>Unfortunately, I have not any experience. But I can gain  great experience by hiring me.</p>
+            <p className='p__text'>
+              Unfortunately, I have not any experience. But I can gain  great experience by hiring me.
+            </p>
           )}
         
         </div>
