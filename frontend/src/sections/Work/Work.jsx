@@ -45,7 +45,7 @@ const Work = () => {
       </h2>
       
       <div className='btn__container'>
-        {['UI/UX', 'React Js', 'Next Js', 'All'].map((item, i) => (
+        {['UI/UX', 'HTML CSS', 'React Js', 'Next Js', 'All'].map((item, i) => (
           <motion.button 
             key={`${item}-${i}`} 
             className={`btn__item ${ activeWork === item ? "active__btn" : '' }`}
