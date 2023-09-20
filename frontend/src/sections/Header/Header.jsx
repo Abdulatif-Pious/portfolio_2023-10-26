@@ -43,8 +43,6 @@ const Header = () => {
         <img 
           src={images.profile}
           alt='profile_img'
-          width="500px"
-          height="500px"
           className='header__img-2'
         />
       </motion.div>

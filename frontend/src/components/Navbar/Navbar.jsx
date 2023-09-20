@@ -42,7 +42,7 @@ const [toggle, setToggle] = useState(false);
         </motion.div>
       {toggle && (
         <motion.div 
-          whileInView={{ x: [400, 0] }}
+          whileInView={{ x: [200, 0] }}
           transition={{ duration: 0.7, ease: 'easeInOut' }}
           className='app__navbar-menu-item'
         >
